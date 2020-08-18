@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+     <link rel="stylesheet" href="style/menu-item-list-admin.css">
+       <link rel="stylesheet" href="style/edit-menu-items.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>menu-item-list-admin</title>
+    <script>
+        function validatef(){
+        
+        var title = document.myform.title;
+        var ti_len = title.value.length;
+
+     if( document.myform.title.value == "" ) {
+            alert( "Title is required!" );
+            document.myform.title.focus() ;
+            return false;
+         }
+       else if (ti_len >= 65|| ti_len < 2)
+        {
+        alert("Title should have 2 to 65 characters");
+       document.myform.title.focus();
+       return false;
+        }
+
+if( document.myform.price.value == "" ) {
+            alert( "Price is required!" );
+            document.myform.price.focus() ;
+            return false;
+         }
+         else if (isNaN(document.myform.price.value) ){
+            alert( "Price has to be a number!" );
+            document.myform.price.focus() ;
+            return false;
+         }
+
+if( document.myform.dol.value == "" ) {
+            alert( "Please provide your name!" );
+            document.myForm.dateOfLaunch.focus() ;
+            return false;
+         }
+
+if( document.myform.Category.value == "-1" ) {
+            alert( "Please provide category!" );
+            return false;
+         }
+
+return true;
+}
+
+
+
+    </script>
+       
+
+
+           
+        
+    
+    </head>
+    <body>
+    <div class="container1">
+            
+            <div class="navbar">
+                
+        <h3>TruYum</h3>
+            <div class="left">
+            <img src="images/icon.jpg"></div>
+            
+            <div class="right"><a href="menu-item-list-customer.html" style="color:aliceblue;  vertical-align:right;"><h3>Menu</h3></a></div>
+            
+            </div>
+
+
+
+            <h3>Edit Menu Items</h3>
+            <div class="container">
+                    <div class="cont">
+            <form name="myform" >
+                    
+        
+        <label for="fname" >Name</label><br>
+        <input type="text" id="title"  name="title" style="width:100%;">
+      
+    <br>
+    <br>
+      
+      <div class="cont2">
+       
+        <label for="price"></label>Price (Rs.)</label>
+        
+        <label for="active"style="margin-left: 15px;">Active</label>
+        <label for="date"style="margin-left: 35px;">Date of Launch</label>
+        <label for="category"style="margin-left: 40px;">Category</label>
+        <br>
+        
+        <input type="text" id="price" name="price" style="width:50px; float: left;margin-right: 10px;">
+        
+        <input type="radio" name="Active" style=" margin-top: 5px;  float: left;">
+        <p style="width: 30px;float: left;">Yes</p>
+        <input type="radio" name="Active" style=" margin-top: 5px; float: left;">
+        <p  style="width: 30px; float: left;">No</p>  
+    
+    
+    
+        <input type="text" id="dateOfLaunch" name="dateOfLaunch" style="width:100px;">
+    
+        <select id="category" name="category">
+                <option value="-1">Choose one</option>
+                <option value="1">Main Course</option>
+                <option value="2">Starters</option>
+                <option value="3">Desserts</option>
+                <option value="4">Drinks</option>
+                </select>
+            
+              
+              <br>
+              <br>
+              <input type="checkbox"> Free Delivery<br>
+              <input type="submit" value="save" onclick="validatef()" style="margin-top:5px; background-color:rgb(19, 19, 204) ;padding:10px;">
+            </form>
+
+        </div>
+    </div>
+    <div class="footer">
+            <div class="foot">
+                <p>Copyright @ 2019</p></div>
+              </div>
+            </div>
+            </body>
